@@ -1,9 +1,9 @@
-const express = require('express');
 const functions = require("firebase-functions");
+const express = require('express');
 const axios = require('axios');
 const cors = require('cors'); 
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -52,8 +52,8 @@ app.get('/api/proposal/detail/:id', async (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
 
-// exports.app = functions.https.onRequest(app);
+exports.app = functions.https.onRequest(app);
